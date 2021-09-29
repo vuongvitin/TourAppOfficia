@@ -47,13 +47,28 @@ public class TourRepositoryImpl implements TourRepository{
         
         Query q = session.createQuery(query);
         
-        int max = 9;
+        int max = 20;
         int first = (page -1)*max;
         q.setFirstResult(first);       
         q.setMaxResults(max);
 
         
         return q.getResultList();
+    }
+
+    @Override
+    public long countTours() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Query q = session.createQuery("Select Count(*) From Tour");
+        
+        
+        return Long.parseLong(q.getSingleResult().toString());
+    }
+
+    @Override
+    public Tour getTourById(int tourId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        return session.get(Tour.class, tourId);
     }
     
 }

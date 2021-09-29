@@ -34,5 +34,11 @@ public class TypeRepositoryImpl implements TypeRepository{
         
         return q.getResultList();
     }
+
+    @Override
+    public Type getTypeById(int typeId) {
+        Session s = sessionFactory.getObject().getCurrentSession();
+        return s.get(Type.class, typeId);
+    }
     
 }

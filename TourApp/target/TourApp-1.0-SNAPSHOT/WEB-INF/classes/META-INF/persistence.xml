@@ -4,6 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.tmv.pojos.Tour</class>
     <class>com.tmv.pojos.Type</class>
+    <class>com.tmv.pojos.Imges</class>
+    <class>com.tmv.pojos.Comment</class>
+    <class>com.tmv.pojos.User</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toujdbc?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

@@ -20,9 +20,9 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>-->
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />
     </definition>
-    <definition name = "product-detail" extends="baseLayout">
-        <put-attribute name="title" value="Chi tiet san pham"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/product-detail.jsp" />
+    <definition name = "tour-detail" extends="baseLayout">
+        <put-attribute name="title" value="Chi tiết chuyến di"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tour-detail.jsp" />
     </definition>
 
 </tiles-definitions>

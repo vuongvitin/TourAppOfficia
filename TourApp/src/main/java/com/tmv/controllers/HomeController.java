@@ -5,6 +5,7 @@
  */
 package com.tmv.controllers;
 
+import com.tmv.pojos.Type;
 import com.tmv.service.TourService;
 import com.tmv.service.TypeService;
 import java.util.Map;
@@ -36,9 +37,21 @@ public class HomeController {
     
     @RequestMapping("/")
     public String index(Model model, @RequestParam(required = false) Map<String, String> params){
+        String kw = params.getOrDefault("kw", null);
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
         
+        String typeId = params.get("TypeId");
+        if(typeId == null){
+            model.addAttribute("tours", this.tourService.getTours(kw, page));      
+        }else{
+            Type t = this.typeService.getTypeById(Integer.parseInt(typeId));
+            model.addAttribute("tours", t.getTourCollection());
+        }
 
-        model.addAttribute("tours", this.tourService.getTours(null, 1));
+        
+        model.addAttribute("countTours", this.tourService.countTours());
+        
+        
         return "index";
     }
 }

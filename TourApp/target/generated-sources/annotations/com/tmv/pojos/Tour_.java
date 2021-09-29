@@ -1,16 +1,21 @@
 package com.tmv.pojos;
 
+import com.tmv.pojos.Comment;
+import com.tmv.pojos.Imges;
 import com.tmv.pojos.Type;
 import javax.annotation.Generated;
+import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-09-27T20:30:12")
+@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-09-30T02:04:27")
 @StaticMetamodel(Tour.class)
 public class Tour_ { 
 
     public static volatile SingularAttribute<Tour, String> image;
     public static volatile SingularAttribute<Tour, String> ngayKhoiHanh;
+    public static volatile CollectionAttribute<Tour, Comment> commentCollection;
+    public static volatile CollectionAttribute<Tour, Imges> imgesCollection;
     public static volatile SingularAttribute<Tour, String> lichTrinh;
     public static volatile SingularAttribute<Tour, String> diemKhoiHanh;
     public static volatile SingularAttribute<Tour, String> name;

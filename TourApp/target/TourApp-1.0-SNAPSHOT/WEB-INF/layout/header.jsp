@@ -13,11 +13,14 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="/"><strong>Trang chủ</strong></a>
+        <a class="nav-link" href="<c:url value="/" />"><strong>Trang chủ</strong></a>
     </li>
     <c:forEach items="${types}" var="type">
         <li class="nav-item">
-            <a class="nav-link" href="/">${type.ten}</a>
+            <c:url value="/" var="typePath">
+                    <c:param name="TypeId" value="${type.id}"></c:param>
+            </c:url>
+            <a class="nav-link" href="${typePath}">${type.ten}</a>
         </li>
     </c:forEach>
     <li class="nav-item">

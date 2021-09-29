@@ -26,5 +26,10 @@ public class TypeServiceImpl implements TypeService{
     public List<Type> getTypes() {
         return this.typeRepository.getTypes();
     }
+
+    @Override
+    public Type getTypeById(int typeId) {
+        return this.typeRepository.getTypeById(typeId);
+    }
     
 }

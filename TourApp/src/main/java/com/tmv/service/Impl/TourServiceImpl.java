@@ -25,5 +25,15 @@ public class TourServiceImpl implements TourService{
     public List<Tour> getTours(String kw, int page) {
         return this.tourRepository.getTours(kw, page);
     }
+
+    @Override
+    public Long countTours() {
+        return this.tourRepository.countTours();
+    }
+
+    @Override
+    public Tour getTourById(int tourId) {
+        return this.tourRepository.getTourById(tourId);
+    }
     
 }
