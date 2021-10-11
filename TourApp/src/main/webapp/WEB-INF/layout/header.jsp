@@ -25,7 +25,37 @@
     </c:forEach>
     <li class="nav-item">
             <a class="nav-link" href="/">Liên hệ</a>
-    </li>       
+    </li>
+    
+    <c:if test="${pageContext.request.userPrincipal.name == null}">
+        <li class="nav-item">
+            <a href="<c:url value="/login"/>" class="nav-link text-warning">
+                <i class="fas fa-user">Dang nhap</i>
+            </a>
+        </li>
+    </c:if>
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <li class="nav-item">
+            <a href="<c:url value="/"/>" class="nav-link text-danger">                        
+                <c:if test="${currentUser.avatar != null}" >
+                    <img style="width: 25px" class="rounded-circle" src="${currentUser.avatar}"  alt="userImg"/>
+                </c:if>
+                <c:if test="${currentUser.avatar == null}" >
+                    <i class="fas fa-user">${pageContext.request.userPrincipal.name}</i>
+                </c:if>  
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="<c:url value="/logout"/>" class="nav-link text-danger">
+                <i class="">Dang xuat</i>
+            </a>
+        </li>
+    </c:if> 
+    <li class="nav-item">
+        <a href="<c:url value="/register"/>" class="nav-link text-warning">
+             <i class="fas fa-check-circle">Dang Ky</i>
+        </a>
+    </li>
   </ul>
 </nav>
     

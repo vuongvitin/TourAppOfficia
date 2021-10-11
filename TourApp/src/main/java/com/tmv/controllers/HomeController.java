@@ -40,7 +40,6 @@ public class HomeController {
         
         model.addAttribute("countTours", this.tourService.countAllTours());
                
-        
     }
     
     @RequestMapping("/")
