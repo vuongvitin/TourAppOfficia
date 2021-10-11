@@ -8,6 +8,7 @@ package com.tmv.service.Impl;
 import com.tmv.pojos.Tour;
 import com.tmv.repository.TourRepository;
 import com.tmv.service.TourService;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,13 +23,13 @@ public class TourServiceImpl implements TourService{
     private TourRepository tourRepository;
     
     @Override
-    public List<Tour> getTours(String kw, int page) {
-        return this.tourRepository.getTours(kw, page);
+    public List<Tour> getTours(String kw, int page, Long fromPrice, Long toPrice, Date startDate, Date endDate) {
+        return this.tourRepository.getTours(kw, page, fromPrice, toPrice, startDate, endDate);
     }
 
     @Override
-    public Long countTours() {
-        return this.tourRepository.countTours();
+    public Long countAllTours() {
+        return this.tourRepository.countAllTours();
     }
 
     @Override

@@ -7,6 +7,7 @@ package com.tmv.pojos;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -21,6 +22,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.criteria.Fetch;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -78,9 +81,9 @@ public class Tour implements Serializable {
     private String thoiGian;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
     @Column(name = "ngay_khoi_hanh")
-    private String ngayKhoiHanh;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date ngayKhoiHanh;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -99,9 +102,8 @@ public class Tour implements Serializable {
     private String mota;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
     @Column(name = "gia_tour")
-    private String giaTour;
+    private Long giaTour;
     @Size(max = 45)
     @Column(name = "lich_trinh")
     private String lichTrinh;
@@ -121,7 +123,7 @@ public class Tour implements Serializable {
         this.id = id;
     }
 
-    public Tour(Integer id, String name, String thoiGian, String ngayKhoiHanh, String diemDen, String image, String giaTour, String diemKhoiHanh) {
+    public Tour(Integer id, String name, String thoiGian, Date ngayKhoiHanh, String diemDen, String image, Long giaTour, String diemKhoiHanh) {
         this.id = id;
         this.name = name;
         this.thoiGian = thoiGian;
@@ -156,11 +158,11 @@ public class Tour implements Serializable {
         this.thoiGian = thoiGian;
     }
 
-    public String getNgayKhoiHanh() {
+    public Date getNgayKhoiHanh() {
         return ngayKhoiHanh;
     }
 
-    public void setNgayKhoiHanh(String ngayKhoiHanh) {
+    public void setNgayKhoiHanh(Date ngayKhoiHanh) {
         this.ngayKhoiHanh = ngayKhoiHanh;
     }
 
@@ -196,11 +198,11 @@ public class Tour implements Serializable {
         this.mota = mota;
     }
 
-    public String getGiaTour() {
+    public Long getGiaTour() {
         return giaTour;
     }
 
-    public void setGiaTour(String giaTour) {
+    public void setGiaTour(Long giaTour) {
         this.giaTour = giaTour;
     }
 

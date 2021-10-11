@@ -6,6 +6,7 @@
 package com.tmv.service;
 
 import com.tmv.pojos.Tour;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,7 +14,8 @@ import java.util.List;
  * @author PC
  */
 public interface TourService {
-    List<Tour> getTours(String kw, int page);
-    Long countTours();
+    List<Tour> getTours(String kw, int page, Long fromPrice, Long toPrice, Date startDate, Date endDate);
+    Long countAllTours();
     Tour getTourById(int tourId);
+
 }

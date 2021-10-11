@@ -17,7 +17,7 @@
                        <img class="card-img-top img-fluid" src="${tourId.image}" alt="${tourId.name}"/>
                    </c:when>
                    <c:when test="${tourId.image == null || tourId.image.startsWith('http') == false }" >
-                       <img class="card-img-top img-fluid" src="<c:url value="/images/Uyen.jpg" />" alt="${tourId.name}"/>
+                       <img class="card-img-top img-fluid" src="<c:url value="/images/Koala.jpg" />" alt="${tourId.name}"/>
                    </c:when>
             </c:choose>
 
@@ -28,15 +28,19 @@
         <h5 style="padding: 10px 0px;">Tour này có gì hay?</h5>
         <p class="mota">- ${tourId.mota}</p>
         <div>
-            <input type="button" value="ĐẶT NGAY" style="padding: 1em" class="btn btn-danger"  />
+            <a class="btn btn-primary btn-lg mg-t-10" href="<c:url value="/booking/${tourId.id}" />" 
+               onclick="addToCart('${tourId.name}', ${tourId.giaTour})">Dat ngay</a>
         </div>
+<!--        <a href="#" class="btn btn-primary" onclick="addToCart(${tourId.id}, '${tourId.name}', ${tourId.giaTour})">Dat hang</a>-->
     </div>
 </div>        
         
 <br></br>
 
-
-<div class="boanh">
+             
+            
+            
+<div class="listImges">
     <div class="row">
         <c:forEach items="${tourId.imgesCollection}" var="images">
             <div class="col-4 pt-2"> <img class="card-img-top img-fluid" src="${images.imges}" alt="${tourId.name}"/></div>

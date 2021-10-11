@@ -6,14 +6,66 @@
 
 
 /* global fetch */
+function addToCart(name, price){
 
-//function addToCart(productId){
-//    fetch(`/SpringMVCdemo1/api/cart/${productId}`).then(res => res.json()).then(data =>{
-//        var d = document.getElementById("cart-counter");
-//        if(d !== null)
-//            d.innerText = data;        
-//    });
-//        
-//        
-//}
-//ok
+    
+    fetch("/TourApp/api/cart", {
+        method: 'post',
+        body: JSON.stringify({
+            "tourName": name,
+            "priceAdult": price,
+            "quantityAdult": 0,
+            "priceChildren": price*0.5,
+            "quantityChildren": 0,
+            
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        return res.json();
+    }).then(function(data){
+        console.info(data)
+    })
+}
+
+function updateCartAdult(name, obj){
+   fetch("/TourApp/api/cart", {
+        method: 'put',
+        body: JSON.stringify({
+            "tourName": name,
+            "priceAdult": 0,
+            "quantityAdult": obj.value,
+            "priceChildren": 0,
+            "quantityChildren": 0
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        return res.json()
+    }).then(function (data){
+        let amount = document.getElementById("amountCart")
+        amount.innerText = data
+    })
+}
+function updateCartChildren(name, obj){
+   fetch("/TourApp/api/cart", {
+        method: 'put',
+        body: JSON.stringify({
+            "tourName": name,
+            "priceAdult": 0,
+            "quantityAdult": 0,
+            "priceChildren": 0,
+            "quantityChildren": obj.value
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        return res.json()
+    }).then(function (data){
+        let amount = document.getElementById("amountCart")
+        amount.innerText = data
+    })
+} 
