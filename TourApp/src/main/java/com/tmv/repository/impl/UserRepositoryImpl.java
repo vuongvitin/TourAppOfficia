@@ -39,7 +39,7 @@ public class UserRepositoryImpl implements UserRepository{
     
     @Override
     public boolean addUser(User user) {
-         Session session = this.sessionFactory.getObject().getCurrentSession();
+        Session session = this.sessionFactory.getObject().getCurrentSession();
         try{
            session.save(user);
            return true;

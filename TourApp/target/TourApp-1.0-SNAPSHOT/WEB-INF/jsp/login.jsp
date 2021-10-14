@@ -7,10 +7,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<c:if test="${param.successMsg != null}">
     <div class="alert alert-danger">
-        ${successMsg}ccccc
+        ${param.successMsg}}ccccc
     </div>
+</c:if>
+    
 
 
 

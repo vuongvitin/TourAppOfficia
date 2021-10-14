@@ -25,7 +25,7 @@ public class TourController {
     private ImageService imageService;
     
     @GetMapping("tours/{tourId}")
-    public String detail(Model model,@PathVariable(value = "tourId") int tourId){
+    public String detail(Model model, @PathVariable(value = "tourId") int tourId){
         
         model.addAttribute("tourId", this.tourService.getTourById(tourId));
 //        model.addAttribute("images", this.imageService.getImageByTourId(tourId));

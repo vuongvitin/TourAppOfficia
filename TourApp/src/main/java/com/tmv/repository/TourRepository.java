@@ -17,5 +17,6 @@ public interface TourRepository {
     List<Tour> getTours(String kw, int page, Long fromPrice, Long toPrice, Date startDate, Date endDate);
     long countAllTours();
     Tour getTourById(int tourId);
+    boolean addOrUpdateTour(Tour tour);
   
 }

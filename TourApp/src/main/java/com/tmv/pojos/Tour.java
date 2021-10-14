@@ -24,6 +24,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.persistence.criteria.Fetch;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,6 +33,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -51,7 +54,7 @@ import org.hibernate.annotations.LazyCollectionOption;
     @NamedQuery(name = "Tour.findByImage", query = "SELECT t FROM Tour t WHERE t.image = :image"),
     @NamedQuery(name = "Tour.findByMota", query = "SELECT t FROM Tour t WHERE t.mota = :mota"),
     @NamedQuery(name = "Tour.findByGiaTour", query = "SELECT t FROM Tour t WHERE t.giaTour = :giaTour"),
-    @NamedQuery(name = "Tour.findByLichTrinh", query = "SELECT t FROM Tour t WHERE t.lichTrinh = :lichTrinh"),
+
     @NamedQuery(name = "Tour.findByDiemKhoiHanh", query = "SELECT t FROM Tour t WHERE t.diemKhoiHanh = :diemKhoiHanh")})
 public class Tour implements Serializable {
 
@@ -68,10 +71,10 @@ public class Tour implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
-    private Integer id;
+    private int id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 150)
+    @Size(min = 5, max = 150, message = "{product.name.lengErr}")
     @Column(name = "name")
     private String name;
     @Basic(optional = false)
@@ -80,9 +83,10 @@ public class Tour implements Serializable {
     @Column(name = "thoi_gian")
     private String thoiGian;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull
     @Column(name = "ngay_khoi_hanh")
     @Temporal(TemporalType.TIMESTAMP)
+//    @DateTimeFormat(pattern = "MM-dd-yyyy")
     private Date ngayKhoiHanh;
     @Basic(optional = false)
     @NotNull
@@ -104,17 +108,21 @@ public class Tour implements Serializable {
     @NotNull
     @Column(name = "gia_tour")
     private Long giaTour;
-    @Size(max = 45)
-    @Column(name = "lich_trinh")
-    private String lichTrinh;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "diem_khoi_hanh")
     private String diemKhoiHanh;
-    @JoinColumn(name = "type_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
+    
+    @JoinColumn(name = "type_id")
+    @ManyToOne
     private Type typeId;
+    
+    @Transient
+    private MultipartFile file;
+    
+
 
     public Tour() {
     }
@@ -134,11 +142,11 @@ public class Tour implements Serializable {
         this.diemKhoiHanh = diemKhoiHanh;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -206,13 +214,6 @@ public class Tour implements Serializable {
         this.giaTour = giaTour;
     }
 
-    public String getLichTrinh() {
-        return lichTrinh;
-    }
-
-    public void setLichTrinh(String lichTrinh) {
-        this.lichTrinh = lichTrinh;
-    }
 
     public String getDiemKhoiHanh() {
         return diemKhoiHanh;
@@ -230,25 +231,25 @@ public class Tour implements Serializable {
         this.typeId = typeId;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tour)) {
-            return false;
-        }
-        Tour other = (Tour) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Tour)) {
+//            return false;
+//        }
+//        Tour other = (Tour) object;
+////        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+////            return false;
+////        }
+//        return true;
+//    }
 
     @Override
     public String toString() {
@@ -272,5 +273,20 @@ public class Tour implements Serializable {
     public void setCommentCollection(Collection<Comment> commentCollection) {
         this.commentCollection = commentCollection;
     }
+
+    /**
+     * @return the file
+     */
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
+
     
 }

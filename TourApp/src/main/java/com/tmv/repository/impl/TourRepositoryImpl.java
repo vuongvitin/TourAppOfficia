@@ -15,6 +15,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -87,6 +88,22 @@ public class TourRepositoryImpl implements TourRepository{
     public Tour getTourById(int tourId) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         return session.get(Tour.class, tourId);
+    }
+
+    @Override
+    public boolean addOrUpdateTour(Tour tour) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try{
+            if (tour.getId() == 0)
+                session.save(tour);
+            else
+                session.update(tour);
+            
+            return true;
+        } catch (HibernateException ex){
+            System.err.println(ex.getMessage());
+        }
+        return false;
     }
     
 }

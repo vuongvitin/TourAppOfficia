@@ -32,6 +32,7 @@ public class UserController {
         model.addAttribute("user", new User());
         return "register";
     }
+    
     @PostMapping("/register")
     public String registers(Model model, @ModelAttribute(value = "user") User user){
         if(user.getPassword().isEmpty()

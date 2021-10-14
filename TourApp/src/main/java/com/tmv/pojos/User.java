@@ -86,10 +86,8 @@ public class User implements Serializable {
     
     private String avatar;
     @Transient
-    @JsonIgnore
     private MultipartFile file;
     @Transient
-    @JsonIgnore
     private String confirmPassword;
 
     public User() {

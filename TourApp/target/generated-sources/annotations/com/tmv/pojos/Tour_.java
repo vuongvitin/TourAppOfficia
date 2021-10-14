@@ -9,7 +9,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-10-12T03:11:29")
+@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-10-14T07:43:23")
 @StaticMetamodel(Tour.class)
 public class Tour_ { 
 
@@ -17,7 +17,6 @@ public class Tour_ {
     public static volatile SingularAttribute<Tour, Date> ngayKhoiHanh;
     public static volatile CollectionAttribute<Tour, Comment> commentCollection;
     public static volatile CollectionAttribute<Tour, Imges> imgesCollection;
-    public static volatile SingularAttribute<Tour, String> lichTrinh;
     public static volatile SingularAttribute<Tour, String> diemKhoiHanh;
     public static volatile SingularAttribute<Tour, String> name;
     public static volatile SingularAttribute<Tour, Long> giaTour;

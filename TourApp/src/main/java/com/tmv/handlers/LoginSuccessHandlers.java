@@ -29,6 +29,7 @@ public class LoginSuccessHandlers implements AuthenticationSuccessHandler{
         User user = this.userDetailsService.getUser(a.getName()).get(0);
         request.getSession().setAttribute("currentUser", user);
         
+        
         respone.sendRedirect("/TourApp");
     }
 

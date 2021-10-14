@@ -20,7 +20,9 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Cart.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\DispatcherServletInitializer.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\SpringSecurityConfig.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\BookingController.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\formatter\TypeFormatter.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\TypeRepository.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APITourController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\TourRepositoryImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\ImageService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\ImageRepositoryImpl.java

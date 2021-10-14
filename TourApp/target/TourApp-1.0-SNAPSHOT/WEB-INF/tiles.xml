@@ -39,5 +39,23 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Đang ky"/>
         <put-attribute name="content" value="/WEB-INF/jsp/register.jsp" />
     </definition>
+    
+    <!--    admin-->
+    <definition name = "baseAdminLayout" template="/WEB-INF/layout/base-admin.jsp">
+        <put-attribute name="title" value="Quan tri he thong du lich"/>
+        <put-attribute name="left" value="/WEB-INF/layout/admin-left.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/admin-footer.jsp"/>
+        <put-attribute name="content" value="BASE" />
+    </definition>
+    
+    <definition name = "manage-tour" extends="baseAdminLayout">
+        <put-attribute name="title" value="Quan trị tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/manage-tour.jsp" />
+    </definition>
+    
+    <definition name = "tour-edit" extends="baseAdminLayout">
+        <put-attribute name="title" value="Quan trị tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tour-edit.jsp" />
+    </definition>
 
 </tiles-definitions>

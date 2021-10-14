@@ -62,7 +62,7 @@
     </tr>          
 </table>
       
-        <div>
+        <div class="alert alert-warning">
             <h4>Tong tien: 
                 <span id="amountCart">
                     <fmt:formatNumber type = "number" 

@@ -5,6 +5,7 @@
  */
 package com.tmv.configs;
 
+import com.tmv.formatter.TypeFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -76,32 +77,32 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
     
     
     
-//    @Override
-//    public void addFormatters(FormatterRegistry registry){
-//        registry.addFormatter(new CategoryFormatter());
-//    }
+    @Override
+    public void addFormatters(FormatterRegistry registry){
+        registry.addFormatter(new TypeFormatter());
+    }
     
-//    
-//    @Bean
-//    public LocalValidatorFactoryBean validator(){
-//           LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
-//           v.setValidationMessageSource(messageSource());
-//           
-//           return v;
-//    }
-//        
-//    @Override
-//    public Validator getValidator() {
-//        return validator();
-//    }
-//    
-// 
-//    
-//    @Bean
-//    public MessageSource messageSource(){
-//        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-//        source.setBasename("message");
-//        return source;
-//    }
+    
+    @Bean
+    public LocalValidatorFactoryBean validator(){
+           LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
+           v.setValidationMessageSource(messageSource());
+           
+           return v;
+    }
+        
+    @Override
+    public Validator getValidator() {
+        return validator();
+    }
+    
+ 
+    
+    @Bean
+    public MessageSource messageSource(){
+        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+        source.setBasename("messages");
+        return source;
+    }
   
 }

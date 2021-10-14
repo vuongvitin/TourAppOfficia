@@ -22,6 +22,7 @@ public class LogoutHandlers implements LogoutSuccessHandler{
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse respone, Authentication a) throws IOException, ServletException {
         request.getSession().removeAttribute("currentUser");
         
+        
         respone.sendRedirect("/TourApp/login");
     }
     
