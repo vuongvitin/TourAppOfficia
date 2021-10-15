@@ -8,6 +8,7 @@
     <class>com.tmv.pojos.Comment</class>
     <class>com.tmv.pojos.User</class>
     <class>com.tmv.pojos.SaleOrder</class>
+    <class>com.tmv.pojos.Staff</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toujdbc?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

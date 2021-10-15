@@ -6,11 +6,13 @@
 package com.tmv.controllers;
 
 
+import com.tmv.pojos.Staff;
 import com.tmv.pojos.Tour;
+import com.tmv.service.StaffService;
 import com.tmv.service.TourService;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,18 +38,19 @@ public class AdminController {
     @Autowired
     public TourService tourService;
     
-    @GetMapping("/manage-tour")
+    
+    @GetMapping("/manage")
     public String manageTour(Model model, @RequestParam(required = false) Map<String, String> params){
         String kw = params.getOrDefault("kw", null);
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
         model.addAttribute("tours", this.tourService.getTours(kw, page, null, null, null, null));
         model.addAttribute("countTours", this.tourService.countAllTours());
         
-        return "manage-tour";
+        return "manage";
     }
     
     @GetMapping("/tour-edit")
-    public String addTourView(Model model,
+    public String addOrUpdateTourView(Model model,
             @RequestParam(name = "tourId", defaultValue = "0") int tourId){
         Tour test = this.tourService.getTourById(tourId);
         if (tourId > 0) // cập nhật
@@ -71,23 +74,26 @@ public class AdminController {
 //            return "tour-edit";
 //        }
         
-//        SimpleDateFormat form = new SimpleDateFormat("dd-MM-yyyy");
-//        
-//        Date userDate = new Date();
-        tour.setId(tourId);
-        if(tour.getId() > 0){}
+        if(tourId != 0){
+            tour.setId(tourId);
+        }
         
-        
-
         if(this.tourService.addOrUpdateTour(tour) == true){
-//            model.addAttribute("Msg", "Thêm thành công!!!");
-            return "redirect:/admin/manage-tour";
+//          model.addAttribute("Msg", "Thêm thành công!!!");
+            return "redirect:/admin/manage";
         }else{
             model.addAttribute("Msg", "Đã có lỗi xảy ra vui lòng quay lại sau!!!");
         }
         
         return "tour-edit";
     }
+    
+    
+    
+    
+    
+    
+    
     
     @InitBinder
     public void initBinder(WebDataBinder binder) {

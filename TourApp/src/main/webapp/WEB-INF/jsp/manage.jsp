@@ -19,13 +19,19 @@
             
   <button type="submit" class="btn btn-primary">Tìm kiếm</button>
 </form>
-${countTours}
 
+<br>
 
-<div class="row">
+<ul class="pagination">
+    <c:forEach begin="1" end="${Math.ceil(countTours/20)}" var="page">
+        <li class="page-item"><a class="page-link" href="<c:url value="/admin/manage"/>?page=${page}">${page}</a></li>
+    </c:forEach>    
+</ul>
+
+<div class="row"">
     <c:forEach var="tour" items="${tours}">
         <div class="col-md-6 col-xs-10" style="padding: 10px">  
-        <div class="card">
+        <div class="card" id="tour${tour.id}">
                <a href="<c:url value="/tours/${tour.id}" />">
                 <c:choose>
                     <c:when test="${tour.image != null && tour.image.startsWith('http') == true }">
@@ -47,15 +53,10 @@ ${countTours}
                   <p class="card-text">Thời gian: ${tour.thoiGian}</p><!-- comment -->
                   <p class="card-text">Phương tiện: ${tour.phuongTien}</p>
                   <a href="<c:url value="/admin/tour-edit?tourId=${tour.id}" />" class="btn btn-primary">Chỉnh sửa</a>
-                  <a href="<c:url value="/admin/tour-edit/?tourId=${tour.id}" />" class="btn btn-warning">Xóa tour</a>
+                  <a onclick="deleteProduct(${tour.id})" class="btn btn-warning">Xóa tour</a>
             </div>      
             </div>
     </div>
     </c:forEach>
 </div>
 
-<ul class="pagination">
-    <c:forEach begin="1" end="${Math.ceil(countTours/20)}" var="page">
-        <li class="page-item"><a class="page-link" href="<c:url value="/admin/manage-tour/"/>?page=${page}">${page}</a></li>
-    </c:forEach>    
-</ul>

@@ -12,10 +12,10 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/admin/manage-tour" />">Quản trị Tours</a>
+        <a class="nav-link" href="<c:url value="/admin/manage" />">Quản trị Tours</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/admin/product-stats" />">Thong ke doanh thu theo tung san pham</a>
+      <a class="nav-link" href="<c:url value="/admin/manage-staff" />">Quản trị nhân viên</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<c:url value="/admin/product-month-stats" />">Thong ke doanh thu theo thang</a>

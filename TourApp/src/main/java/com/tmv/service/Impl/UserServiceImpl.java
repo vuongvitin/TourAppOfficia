@@ -83,5 +83,25 @@ public class UserServiceImpl implements UserService{
         return new org.springframework.security.core.userdetails.User(
                 u.getUsername(), u.getPassword(), authorities);
     }
+
+    @Override
+    public boolean addUserStaff(User user) {
+        try {
+            String pass = user.getPassword();
+            user.setPassword(this.passwordEncoder.encode(pass));
+            user.setUserRole(User.STAFF);
+            
+            Map r = this.cloudinary.uploader().upload(user.getFile().getBytes(),
+                    ObjectUtils.asMap("resource_type", "auto"));
+            
+            user.setAvatar((String) r.get("secure_url"));
+            
+            
+            return this.userRepository.addUser(user);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
      
 }

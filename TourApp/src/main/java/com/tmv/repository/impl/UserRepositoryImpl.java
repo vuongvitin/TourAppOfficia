@@ -66,4 +66,16 @@ public class UserRepositoryImpl implements UserRepository{
         Query q = session.createQuery(query);
         return q.getResultList();
     }
+
+    @Override
+    public boolean addUserStaff(User user) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try{
+           session.save(user);
+           return true;
+        } catch (HibernateException ex){
+            System.err.println(ex.getMessage());
+        }
+        return false;
+    }
 }

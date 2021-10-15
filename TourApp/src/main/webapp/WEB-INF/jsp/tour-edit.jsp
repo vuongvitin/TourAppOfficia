@@ -12,15 +12,10 @@
     <c:if test="${tour.id > 0}">
         <h1 class="text-center text-info">Chỉnh sửa tour</h1>
     </c:if>
-    <c:if test="${tourId == 0}">
+    <c:if test="${tour.id  == 0}">
         <h1 class="text-center text-info">Thêm tour</h1> 
     </c:if>
     
-    <c:if test="${Msg !=  null}">
-    <div class="alert alert-danger">
-        ${Msg}
-    </div>
-    </c:if>
     <c:url value="/admin/tour-edit?tourId=${tour.id}" var="action"  />
     <form:form method="post" enctype="multipart/form-data" modelAttribute="tour">
         <form:errors path="*" element="div" class="alert alert-danger" />

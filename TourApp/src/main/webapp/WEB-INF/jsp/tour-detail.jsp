@@ -55,21 +55,27 @@
     <div class="form-group" style="padding: 10px">
         <label for="comment">Bình luận:</label>
         <textarea class="form-control" cols="6" id="commentId" placeholder="Nhập bình luận..."></textarea>
-<!--        <button type="button" onclick="addComment({productId.id})" class="btn btn-primary">Gui binh luan</button>-->
+<!--        <button type="button" onclick="addComment({tourId.id})" class="btn btn-primary">Gui binh luan</button>-->
         <button type="button" class="btn btn-primary">Gửi bình luận</button>
     </div>   
 </form> 
 
+${countComment}
+<ul class="pagination">
+    <c:forEach begin="1" end="${Math.ceil(countComment/3)}" var="page">
+        <li class="page-item"><a class="page-link" href="<c:url value="/tours/${tourId.id}"/>?page=${page}">${page}</a></li>
+    </c:forEach>    
+</ul>
 
 <div id="commentArea">
-    <c:forEach items="${tourId.commentCollection}" var="comments" >
+    <c:forEach items="${comments}" var="comment" >
     <div class="row">
         <div class="col-md-2" style="padding: 2px">
             <img src="https://res.cloudinary.com/dwsyse8jk/image/upload/v1630358291/uuylm0wbfblm3bfd1jdn.png" class="rounded-circle img-fluid" alt="Cinque Terre">
         </div>
         <div class="col-md-10 mydate">
-            <p>${comments.content}</p>
-           
+            <p>${comment.content}</p>
+            <i>${comment.createdDate}</i>
         </div>
     </div>
     <br></br>
@@ -94,6 +100,16 @@
                 }
                
             }
+    }
+</script>
+
+<script>
+    window.onload = function() {
+        let dates = document.querySelectorAll("div.mydate > i")
+        for (var i = 0; i < dates.length; i++) {
+            let d = dates[i]
+            d.innerText = moment(d.innerText).fromNow();
+        }
     }
 </script>
 

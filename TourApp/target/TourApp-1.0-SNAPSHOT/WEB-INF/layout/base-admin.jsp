@@ -44,6 +44,6 @@
             <tiles:insertAttribute name="footer" />
         </div>
         
-        <script src="<c:url value="/js/stats.js" />" ></script>
+        <script src="<c:url value="/js/main.js" />" ></script>
     </body>
 </html>

@@ -14,7 +14,7 @@
 ${countTours}
 <sec:authorize access="hasRole('ROLE_ADMIN')">
     <div>
-        <a href="<c:url value="/admin/manage-tour"/>"  class="btn btn-danger" >Trang quản trị</a>
+        <a href="<c:url value="/admin/manage"/>"  class="btn btn-danger" >Trang quản trị</a>
     </div>
 </sec:authorize>
 

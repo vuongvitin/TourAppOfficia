@@ -26,7 +26,7 @@ public class APITourController {
     
     @DeleteMapping("/tours/{tourId}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleleProduct(@PathVariable(name = "tourId") int productId) {
-//        this.tourService.(productId);
+    public void deleleProduct(@PathVariable(name = "tourId") int tourId) {
+        this.tourService.deleteTour(tourId);
     }
 }

@@ -69,3 +69,39 @@ function updateCartChildren(name, obj){
         amount.innerText = data
     })
 } 
+
+function deleteProduct(tourId) {
+    if (confirm("Bạn chắc chắn xóa không?") == true) { 
+        fetch(`/TourApp/api/tours/${tourId}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            if (res.status == 200) {
+                let d = document.getElementById(`tour${tourId}`);
+//                d.style.display = "none";
+                location.reload();
+            } else 
+                alert("Something wrong!!!");
+        })
+    }
+}
+
+function deleteStaff(staffId) {
+    if (confirm("Bạn chắc chắn xóa không?") == true) { 
+        fetch(`/TourApp/api/staffs/${staffId}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            if (res.status == 200) {
+                let d = document.getElementById(`staff${staffId}`);
+//                d.style.display = "none";
+                location.reload();
+            } else 
+                alert("Something wrong!!!");
+        })
+    }    
+}

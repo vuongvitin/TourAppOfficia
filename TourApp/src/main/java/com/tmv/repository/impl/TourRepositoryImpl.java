@@ -98,10 +98,23 @@ public class TourRepositoryImpl implements TourRepository{
                 session.save(tour);
             else
                 session.update(tour);
-            
             return true;
         } catch (HibernateException ex){
-            System.err.println(ex.getMessage());
+           System.err.println("== ADD OR UPDATE TOUR ERROR ==="+ ex.getMessage());
+           ex.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteTour(int tourId) {
+        try{
+            Session session = this.sessionFactory.getObject().getCurrentSession();
+            Tour t = session.get(Tour.class, tourId);
+            session.delete(t);
+            return true;
+        }catch(HibernateException ex){
+            ex.printStackTrace();
         }
         return false;
     }

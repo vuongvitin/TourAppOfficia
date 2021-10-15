@@ -18,4 +18,5 @@ public interface TourService {
     Long countAllTours();
     Tour getTourById(int tourId);
     boolean addOrUpdateTour(Tour tour);
+    boolean deleteTour(int tourId);
 }

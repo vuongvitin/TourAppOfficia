@@ -37,7 +37,7 @@ public class UserController {
     public String registers(Model model, @ModelAttribute(value = "user") User user){
         if(user.getPassword().isEmpty()
                 || !user.getPassword().equals(user.getConfirmPassword()))
-        model.addAttribute("errMsg", "Mat khau khong khop!!!asasd");        
+        model.addAttribute("errMsg", "Mat khau khong khop!!!");        
         else{
             if(this.userDetailsService.addUser(user) == true)
             {   

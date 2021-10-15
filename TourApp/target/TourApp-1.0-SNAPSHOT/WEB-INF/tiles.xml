@@ -48,14 +48,29 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="content" value="BASE" />
     </definition>
     
-    <definition name = "manage-tour" extends="baseAdminLayout">
+    <definition name = "manage" extends="baseAdminLayout">
         <put-attribute name="title" value="Quan trị tour"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/manage-tour.jsp" />
+        <put-attribute name="content" value="/WEB-INF/jsp/manage.jsp" />
     </definition>
     
     <definition name = "tour-edit" extends="baseAdminLayout">
         <put-attribute name="title" value="Quan trị tour"/>
         <put-attribute name="content" value="/WEB-INF/jsp/tour-edit.jsp" />
+    </definition>
+    
+    <definition name = "manage-staff" extends="baseAdminLayout">
+        <put-attribute name="title" value="Quan trị tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/manage-staff.jsp" />
+    </definition>
+    
+    <definition name = "staff-edit" extends="baseAdminLayout">
+        <put-attribute name="title" value="Quan trị nhân viên"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/staff-edit.jsp" />
+    </definition>
+    
+    <definition name = "staff-add-user" extends="baseAdminLayout">
+        <put-attribute name="title" value="Quan trị tài khoản nhân viên"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/staff-add-user.jsp" />
     </definition>
 
 </tiles-definitions>
