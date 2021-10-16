@@ -64,9 +64,9 @@ ${countTours}
     <label  class="text-danger font-weight-bold h3"">Tên chuyến đi: </label>
     <input type="text" name="kw" class="form-control"/>
             
-  <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
 </form>
-
+<br>
 <ul class="pagination">
     <c:forEach begin="1" end="${Math.ceil(countTours/20)}" var="page">
         <li class="page-item"><a class="page-link" href="<c:url value="/"/>?page=${page}">${page}</a></li>

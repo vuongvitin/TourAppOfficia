@@ -31,7 +31,7 @@ public class CommentServiceImpl implements CommentService{
     private UserRepository userRepository;
     
     @Override
-    public Comment addComment(String content, int tourId, User creator) {
+    public Comment addComment(String content, int tourId, User creator, String avatar) {
         Tour tour = this.tourRepository.getTourById(tourId);
         User user = this.userRepository.getUserById(creator.getId());
         Comment c = new Comment();
@@ -39,6 +39,7 @@ public class CommentServiceImpl implements CommentService{
         c.setUser(user);
         c.setTour(tour);
         c.setCreatedDate(new Date());
+        c.setAvatar(avatar);
         
         return this.commentRepository.addComment(c);
     }

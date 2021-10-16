@@ -5,6 +5,7 @@
  */
 package com.tmv.pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -58,14 +59,17 @@ import org.springframework.web.multipart.MultipartFile;
     @NamedQuery(name = "Tour.findByDiemKhoiHanh", query = "SELECT t FROM Tour t WHERE t.diemKhoiHanh = :diemKhoiHanh")})
 public class Tour implements Serializable {
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tour", fetch = FetchType.EAGER)
-//    @LazyCollection(LazyCollectionOption.FALSE)
-    @org.hibernate.annotations.Fetch(value = FetchMode.SUBSELECT)
-    private Collection<Comment> commentCollection;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "gia_tour")
+    private Long giaTour;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tour", fetch = FetchType.EAGER)
-    private Collection<Imges> imgesCollection;
 
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tour", fetch = FetchType.EAGER)
+////    @LazyCollection(LazyCollectionOption.FALSE)
+//    @JsonIgnore
+//    private Collection<Imges> imgesCollection;
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -104,10 +108,6 @@ public class Tour implements Serializable {
     @Size(max = 1000)
     @Column(name = "Mo_ta")
     private String mota;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "gia_tour")
-    private Long giaTour;
 
     @Basic(optional = false)
     @NotNull
@@ -120,6 +120,7 @@ public class Tour implements Serializable {
     private Type typeId;
     
     @Transient
+    @JsonIgnore
     private MultipartFile file;
     
 
@@ -206,15 +207,6 @@ public class Tour implements Serializable {
         this.mota = mota;
     }
 
-    public Long getGiaTour() {
-        return giaTour;
-    }
-
-    public void setGiaTour(Long giaTour) {
-        this.giaTour = giaTour;
-    }
-
-
     public String getDiemKhoiHanh() {
         return diemKhoiHanh;
     }
@@ -256,23 +248,16 @@ public class Tour implements Serializable {
         return "com.tmv.pojos.Tour[ id=" + id + " ]";
     }
 
-    @XmlTransient
-    public Collection<Imges> getImgesCollection() {
-        return imgesCollection;
-    }
+//    @XmlTransient
+//    public Collection<Imges> getImgesCollection() {
+//        return imgesCollection;
+//    }
+//
+//    public void setImgesCollection(Collection<Imges> imgesCollection) {
+//        this.imgesCollection = imgesCollection;
+//    }
 
-    public void setImgesCollection(Collection<Imges> imgesCollection) {
-        this.imgesCollection = imgesCollection;
-    }
 
-    @XmlTransient
-    public Collection<Comment> getCommentCollection() {
-        return commentCollection;
-    }
-
-    public void setCommentCollection(Collection<Comment> commentCollection) {
-        this.commentCollection = commentCollection;
-    }
 
     /**
      * @return the file
@@ -286,6 +271,20 @@ public class Tour implements Serializable {
      */
     public void setFile(MultipartFile file) {
         this.file = file;
+    }
+
+    /**
+     * @return the giaTour
+     */
+    public Long getGiaTour() {
+        return giaTour;
+    }
+
+    /**
+     * @param giaTour the giaTour to set
+     */
+    public void setGiaTour(Long giaTour) {
+        this.giaTour = giaTour;
     }
 
     

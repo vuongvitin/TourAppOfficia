@@ -49,6 +49,8 @@ public class TourController {
             @RequestParam(required = false) Map<String, String> params){
         
         model.addAttribute("tourId", this.tourService.getTourById(tourId));
+        
+        model.addAttribute("images", this.imageService.getImageByTourId(tourId));
 
         model.addAttribute("countComment", this.commentService.countCommentByTourId(tourId));
 //        

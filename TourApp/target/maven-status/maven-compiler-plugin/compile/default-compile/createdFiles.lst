@@ -4,13 +4,14 @@ com\tmv\service\UserService.class
 com\tmv\controllers\AdminUserController.class
 com\tmv\service\TypeService.class
 com\tmv\repository\TypeRepository.class
-com\tmv\pojos\Imges_.class
 com\tmv\configs\HibernateConfig.class
 com\tmv\controllers\APIStaffController.class
 com\tmv\pojos\Type_.class
 com\tmv\pojos\User_.class
+com\tmv\pojos\Images_.class
 com\tmv\service\ImageService.class
 com\tmv\configs\SecurityWebAppInitializer.class
+com\tmv\controllers\NewsController.class
 com\tmv\utils\Utils.class
 com\tmv\pojos\Cart.class
 com\tmv\pojos\SaleOrder_.class
@@ -18,6 +19,7 @@ com\tmv\repository\UserRepository.class
 com\tmv\pojos\SaleOrder.class
 com\tmv\repository\impl\UserRepositoryImpl.class
 com\tmv\repository\impl\TourRepositoryImpl.class
+com\tmv\repository\NewsRepository.class
 com\tmv\pojos\Tour_.class
 com\tmv\repository\impl\CommentRepositoryImpl.class
 com\tmv\pojos\Staff.class
@@ -25,11 +27,14 @@ com\tmv\controllers\AdminController.class
 com\tmv\repository\impl\TypeRepositoryImpl.class
 com\tmv\service\Impl\CommentServiceImpl.class
 com\tmv\pojos\Comment_.class
-com\tmv\pojos\Imges.class
 com\tmv\service\CommentService.class
 com\tmv\controllers\UserController.class
 com\tmv\controllers\HomeController.class
+com\tmv\service\Impl\NewsServiceImpl.class
 com\tmv\repository\impl\StaffRepositoryImpl.class
+com\tmv\pojos\Images.class
+com\tmv\pojos\News.class
+com\tmv\service\NewsService.class
 com\tmv\service\Impl\UserServiceImpl.class
 com\tmv\service\StaffService.class
 com\tmv\controllers\APITourController.class
@@ -45,6 +50,7 @@ com\tmv\service\Impl\ImageServiceImpl.class
 com\tmv\service\Impl\TypeServiceImpl.class
 com\tmv\repository\CommentRepository.class
 com\tmv\repository\StaffRepository.class
+com\tmv\repository\impl\NewsRepositoryImpl.class
 com\tmv\configs\WebApplicationContextConfig.class
 com\tmv\service\Impl\StaffServiceImpl.class
 com\tmv\formatter\TypeFormatter.class
@@ -57,4 +63,5 @@ com\tmv\service\Impl\TourServiceImpl.class
 com\tmv\service\TourService.class
 com\tmv\controllers\TourController.class
 com\tmv\handlers\LogoutHandlers.class
+com\tmv\pojos\News_.class
 com\tmv\pojos\Type.class

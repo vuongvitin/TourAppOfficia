@@ -29,6 +29,12 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="header" value="/WEB-INF/layout/header-booking.jsp"/>
         <put-attribute name="content" value="/WEB-INF/jsp/booking.jsp" />
     </definition>
+<!--tin tuc-->
+    <definition name = "news-view" extends="baseLayout">
+        <put-attribute name="title" value="Thanh toán"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header-booking.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/news-view.jsp" />
+    </definition>
 <!--    dang nhap, dang ky-->
     <definition name = "login" extends="baseLayout">
         <put-attribute name="title" value="Đang nhap"/>

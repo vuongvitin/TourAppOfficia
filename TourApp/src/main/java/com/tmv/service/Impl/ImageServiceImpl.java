@@ -5,7 +5,7 @@
  */
 package com.tmv.service.Impl;
 
-import com.tmv.pojos.Imges;
+import com.tmv.pojos.Images;
 import com.tmv.repository.ImageRepository;
 import com.tmv.service.ImageService;
 import java.util.List;
@@ -22,7 +22,7 @@ public class ImageServiceImpl implements ImageService{
     private ImageRepository imageRepository;
 
     @Override
-    public List<Imges> getImageByTourId(int tourId) {
+    public List<Images> getImageByTourId(int tourId) {
         return this.imageRepository.getImageByTourId(tourId);
     }
     

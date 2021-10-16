@@ -24,7 +24,7 @@
         </li>
     </c:forEach>
     <li class="nav-item">
-            <a class="nav-link" href="/">Liên hệ</a>
+        <a class="nav-link" href="<c:url value="/news-view" />">Tin tức</a>
     </li>
     
     <c:if test="${pageContext.request.userPrincipal.name == null}">

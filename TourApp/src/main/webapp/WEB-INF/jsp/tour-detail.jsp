@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <h1 class="text-center text-danger">CHI TIẾT CHUYẾN ĐI</h1>
@@ -24,7 +25,8 @@
     </div>
     <div class="col-md-6">
         <h1>${tourId.name}</h1>
-        <h3 class="text-danger">${tourId.giaTour} VND</h3>
+        <h3 class="text-danger"><fmt:formatNumber type = "number" 
+         maxFractionDigits = "3" value = "${tourId.giaTour}" /> VND</h3>
         <h5 style="padding: 10px 0px;">Tour này có gì hay?</h5>
         <p class="mota">- ${tourId.mota}</p>
         <div>
@@ -42,8 +44,8 @@
             
 <div class="listImges">
     <div class="row">
-        <c:forEach items="${tourId.imgesCollection}" var="images">
-            <div class="col-4 pt-2"> <img class="card-img-top img-fluid" src="${images.imges}" alt="${tourId.name}"/></div>
+        <c:forEach items="${images}" var="images">
+            <div class="col-4 pt-2"> <img class="card-img-top img-fluid" src="${images.image}" alt="${tourId.name}"/></div>
         </c:forEach>
     </div>
     <br>
@@ -55,8 +57,7 @@
     <div class="form-group" style="padding: 10px">
         <label for="comment">Bình luận:</label>
         <textarea class="form-control" cols="6" id="commentId" placeholder="Nhập bình luận..."></textarea>
-<!--        <button type="button" onclick="addComment({tourId.id})" class="btn btn-primary">Gui binh luan</button>-->
-        <button type="button" class="btn btn-primary">Gửi bình luận</button>
+        <button type="button" onclick="addComment(${tourId.id})" class="btn btn-primary">Gửi bình luận</button>
     </div>   
 </form> 
 
@@ -66,6 +67,7 @@ ${countComment}
         <li class="page-item"><a class="page-link" href="<c:url value="/tours/${tourId.id}"/>?page=${page}">${page}</a></li>
     </c:forEach>    
 </ul>
+
 
 <div id="commentArea">
     <c:forEach items="${comments}" var="comment" >

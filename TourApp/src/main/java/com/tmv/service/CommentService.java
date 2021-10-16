@@ -14,7 +14,7 @@ import java.util.List;
  * @author PC
  */
 public interface CommentService {
-    Comment addComment(String content, int productId, User creator);
+    Comment addComment(String content, int productId, User creator, String avatar);
     Long countCommentByTourId(int tourId);
     List<Comment> getCommentByTourId(int tourId, int page);
 }

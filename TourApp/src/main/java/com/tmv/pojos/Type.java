@@ -5,6 +5,7 @@
  */
 package com.tmv.pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -48,6 +49,7 @@ public class Type implements Serializable {
     private String ten;
     @OneToMany(mappedBy = "typeId", fetch = FetchType.EAGER)
     @org.hibernate.annotations.Fetch(value = FetchMode.SUBSELECT)
+    @JsonIgnore
     private Collection<Tour> tourCollection;
 
     public Type() {
@@ -111,5 +113,5 @@ public class Type implements Serializable {
     public String toString() {
         return "com.tmv.pojos.Type[ id=" + id + " ]";
     }
-    
+
 }

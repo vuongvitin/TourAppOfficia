@@ -58,6 +58,8 @@ public class Comment implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date createdDate;
     
+    private String avatar;
+    
     public Comment() {
     }
 
@@ -147,6 +149,20 @@ public class Comment implements Serializable {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the avatar
+     */
+    public String getAvatar() {
+        return avatar;
+    }
+
+    /**
+     * @param avatar the avatar to set
+     */
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
     
 }

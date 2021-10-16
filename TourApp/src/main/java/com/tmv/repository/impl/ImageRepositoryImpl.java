@@ -5,7 +5,7 @@
  */
 package com.tmv.repository.impl;
 
-import com.tmv.pojos.Imges;
+import com.tmv.pojos.Images;
 import com.tmv.pojos.Tour;
 import com.tmv.pojos.Type;
 import javax.persistence.Query;
@@ -32,8 +32,20 @@ public class ImageRepositoryImpl implements ImageRepository{
     private LocalSessionFactoryBean sessionFactory;
 
     @Override
-    public List<Imges> getImageByTourId(int arg0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Images> getImageByTourId(int tourId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Images> query = builder.createQuery(Images.class);
+        Root root = query.from(Images.class);
+
+        
+        query = query.where(builder.equal(root.get("tour"), tourId));
+
+        
+        Query q = session.createQuery(query);
+        
+        
+        return q.getResultList();  
     }
     
     

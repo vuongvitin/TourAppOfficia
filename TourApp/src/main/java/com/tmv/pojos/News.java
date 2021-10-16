@@ -12,12 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -26,13 +23,14 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author PC
  */
 @Entity
-@Table(name = "imges")
+@Table(name = "news")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Imges.findAll", query = "SELECT i FROM Imges i"),
-    @NamedQuery(name = "Imges.findById", query = "SELECT i FROM Imges i WHERE i.id = :id"),
-    @NamedQuery(name = "Imges.findByImges", query = "SELECT i FROM Imges i WHERE i.imges = :imges")})
-public class Imges implements Serializable {
+    @NamedQuery(name = "News.findAll", query = "SELECT n FROM News n"),
+    @NamedQuery(name = "News.findById", query = "SELECT n FROM News n WHERE n.id = :id"),
+    @NamedQuery(name = "News.findByName", query = "SELECT n FROM News n WHERE n.name = :name"),
+    @NamedQuery(name = "News.findByContentSummary", query = "SELECT n FROM News n WHERE n.contentSummary = :contentSummary")})
+public class News implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,24 +38,20 @@ public class Imges implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Basic(optional = false)
-    @Size(min = 1, max = 500)
-    @Column(name = "imges")
-    private String imges;
-    @JoinColumn(name = "tour_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Tour tour;
+    @Size(max = 100)
+    @Column(name = "name")
+    private String name;
+    @Size(max = 255)
+    @Column(name = "content_summary")
+    private String contentSummary;
+    
+    private String image;
 
-    public Imges() {
+    public News() {
     }
 
-    public Imges(Integer id) {
+    public News(Integer id) {
         this.id = id;
-    }
-
-    public Imges(Integer id, String imges) {
-        this.id = id;
-        this.imges = imges;
     }
 
     public Integer getId() {
@@ -68,14 +62,21 @@ public class Imges implements Serializable {
         this.id = id;
     }
 
-    public String getImges() {
-        return imges;
+    public String getName() {
+        return name;
     }
 
-    public void setImges(String imges) {
-        this.imges = imges;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public String getContentSummary() {
+        return contentSummary;
+    }
+
+    public void setContentSummary(String contentSummary) {
+        this.contentSummary = contentSummary;
+    }
 
     @Override
     public int hashCode() {
@@ -87,10 +88,10 @@ public class Imges implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Imges)) {
+        if (!(object instanceof News)) {
             return false;
         }
-        Imges other = (Imges) object;
+        News other = (News) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -99,23 +100,21 @@ public class Imges implements Serializable {
 
     @Override
     public String toString() {
-        return "com.tmv.pojos.Imges[ id=" + id + " ]";
+        return "com.tmv.pojos.News[ id=" + id + " ]";
     }
 
     /**
-     * @return the tour
+     * @return the image
      */
-    public Tour getTour() {
-        return tour;
+    public String getImage() {
+        return image;
     }
 
     /**
-     * @param tour the tour to set
+     * @param image the image to set
      */
-    public void setTour(Tour tour) {
-        this.tour = tour;
+    public void setImage(String image) {
+        this.image = image;
     }
-
-  
     
 }

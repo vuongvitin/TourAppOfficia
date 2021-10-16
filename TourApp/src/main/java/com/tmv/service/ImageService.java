@@ -5,7 +5,7 @@
  */
 package com.tmv.service;
 
-import com.tmv.pojos.Imges;
+import com.tmv.pojos.Images;
 import java.util.List;
 
 /**
@@ -13,5 +13,5 @@ import java.util.List;
  * @author PC
  */
 public interface ImageService {
-    List<Imges> getImageByTourId(int tourId);
+    List<Images> getImageByTourId(int tourId);
 }

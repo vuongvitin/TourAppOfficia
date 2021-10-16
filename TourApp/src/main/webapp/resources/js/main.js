@@ -105,3 +105,36 @@ function deleteStaff(staffId) {
         })
     }    
 }
+
+function addComment(tourId){
+    fetch("/TourApp/api/add-comment", {
+        method: 'post',
+        body: JSON.stringify({
+            "content": document.getElementById("commentId").value,
+            "tourId": tourId          
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        console.info(res);
+        
+        return res.json();
+    }).then(function(data){
+        console.info(data);
+        
+        let area = document.getElementById("commentArea");
+        
+        area.innerHTML = `<div class="row">
+                <div class="col-md-2" style="padding: 2px">
+                    <img src="${data.user.avatar}" class="rounded-circle img-fluid" alt="Cinque Terre">
+                </div>
+                <div class="col-md-10 mydate">
+                    <p>${data.content}</p>
+                    <i>${moment(data.createdDate).fromNow()}</i>
+                </div>
+            </div>       
+            `
+            + area.innerHTML
+    });
+}
