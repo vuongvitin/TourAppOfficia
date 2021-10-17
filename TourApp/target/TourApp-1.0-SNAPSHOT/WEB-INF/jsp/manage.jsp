@@ -30,8 +30,8 @@
 
 <div class="row"">
     <c:forEach var="tour" items="${tours}">
-        <div class="col-md-6 col-xs-10" style="padding: 10px">  
-        <div class="card" id="tour${tour.id}">
+        <div class="col-md-6 col-xs-10" id="tour${tour.id}" style="padding: 10px">  
+        <div class="card">
                <a href="<c:url value="/tours/${tour.id}" />">
                 <c:choose>
                     <c:when test="${tour.image != null && tour.image.startsWith('http') == true }">

@@ -138,3 +138,22 @@ function addComment(tourId){
             + area.innerHTML
     });
 }
+
+function deleteNews(newsId) {
+    if (confirm("Bạn chắc chắn xóa không?") == true) { 
+        fetch(`/TourApp/api/news/${newsId}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            if (res.status == 200) {
+                let d = document.getElementById(`news${newsId}`);
+                d.style.display = "none";
+//                location.reload();
+            } else 
+                alert("Something wrong!!!");
+        })
+    }    
+}
+

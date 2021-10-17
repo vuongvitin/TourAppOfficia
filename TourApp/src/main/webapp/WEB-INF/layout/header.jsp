@@ -38,7 +38,7 @@
         <li class="nav-item">
             <a href="<c:url value="/"/>" class="nav-link text-danger">                        
                 <c:if test="${currentUser.avatar != null}" >
-                    <img style="width: 25px" class="rounded-circle" src="${currentUser.avatar}"  alt="userImg"/>
+                    <img style="width: 30px" class="rounded-circle" src="${currentUser.avatar}"  alt="userImg"/>
                 </c:if>
                 <c:if test="${currentUser.avatar == null}" >
                     <i class="fas fa-user">${pageContext.request.userPrincipal.name}</i>

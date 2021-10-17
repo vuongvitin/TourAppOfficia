@@ -14,4 +14,8 @@ import java.util.List;
  */
 public interface NewsService {
     List<News> getNews(String kw, int page);
+    Long countAllNews();
+    boolean addOrUpdateTour(News news);
+    boolean deleteNews(int newsId);
+    News getNewsById(int newsId);
 }

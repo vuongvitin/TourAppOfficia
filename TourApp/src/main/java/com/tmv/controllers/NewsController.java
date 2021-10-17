@@ -30,6 +30,7 @@ public class NewsController {
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
         
         model.addAttribute("news", this.newsService.getNews(kw, page));
+        model.addAttribute("countNews", this.newsService.countAllNews());
         
         return "news-view";
     }

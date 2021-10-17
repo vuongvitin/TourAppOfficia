@@ -52,7 +52,8 @@
 </div>
  
 <br></br>
-        
+
+<br>
 <form>
     <div class="form-group" style="padding: 10px">
         <label for="comment">Bình luận:</label>
@@ -84,6 +85,8 @@ ${countComment}
     </c:forEach>
 </div>     
     
+<br>
+
 <script>
     window.onload = function() {
              let dates = document.querySelectorAll(".mota")
@@ -114,4 +117,3 @@ ${countComment}
         }
     }
 </script>
-

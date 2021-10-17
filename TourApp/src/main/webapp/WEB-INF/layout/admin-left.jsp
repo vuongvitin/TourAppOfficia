@@ -18,7 +18,7 @@
       <a class="nav-link" href="<c:url value="/admin/manage-staff" />">Quản trị nhân viên</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value="/admin/product-month-stats" />">Thong ke doanh thu theo thang</a>
+      <a class="nav-link" href="<c:url value="/admin/product-stats" />">Thống kê</a>
     </li>
   </ul>
 

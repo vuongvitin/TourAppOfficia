@@ -10,6 +10,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<template>
+  <div>
+    <label for="rating-inline">Inline rating:</label>
+    <b-form-rating id="rating-inline" inline value="4"></b-form-rating>
+  </div>
+</template>
 <h1 class="text-center text-danger">WEB DAT TOUR</h1>
 ${countTours}
 <sec:authorize access="hasRole('ROLE_ADMIN')">

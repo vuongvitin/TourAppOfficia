@@ -1,6 +1,8 @@
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\TourServiceImpl.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Images.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\StaffRepositoryImpl.java
-C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Imges.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APINewsController.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\NewsController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Tour.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\TypeRepositoryImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\CommentServiceImpl.java
@@ -10,12 +12,14 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APICar
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\HomeController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\CommentService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\WebApplicationContextConfig.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\NewsServiceImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\CommentRepository.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\DispatcherServletInitializer.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\SpringSecurityConfig.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\BookingController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\TypeRepository.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\CommentRepositoryImpl.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\NewsRepository.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Staff.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\StaffService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\HibernateConfig.java
@@ -31,9 +35,12 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\UserS
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\handlers\LoginSuccessHandlers.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Type.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\AdminStaffController.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\NewsRepositoryImpl.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\AdminNewsController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\handlers\LogoutHandlers.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\TypeService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\TilesConfig.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\NewsService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\Cart.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\formatter\TypeFormatter.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APITourController.java
@@ -42,6 +49,7 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\ImageServi
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\ImageRepositoryImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APIStaffController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\UserController.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\pojos\News.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\impl\UserRepositoryImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\TypeServiceImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\utils\Utils.java

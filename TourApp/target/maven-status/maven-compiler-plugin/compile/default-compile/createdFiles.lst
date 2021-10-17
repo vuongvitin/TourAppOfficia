@@ -18,6 +18,7 @@ com\tmv\pojos\SaleOrder_.class
 com\tmv\repository\UserRepository.class
 com\tmv\pojos\SaleOrder.class
 com\tmv\repository\impl\UserRepositoryImpl.class
+com\tmv\controllers\APINewsController.class
 com\tmv\repository\impl\TourRepositoryImpl.class
 com\tmv\repository\NewsRepository.class
 com\tmv\pojos\Tour_.class
@@ -26,6 +27,7 @@ com\tmv\pojos\Staff.class
 com\tmv\controllers\AdminController.class
 com\tmv\repository\impl\TypeRepositoryImpl.class
 com\tmv\service\Impl\CommentServiceImpl.class
+com\tmv\controllers\AdminNewsController.class
 com\tmv\pojos\Comment_.class
 com\tmv\service\CommentService.class
 com\tmv\controllers\UserController.class

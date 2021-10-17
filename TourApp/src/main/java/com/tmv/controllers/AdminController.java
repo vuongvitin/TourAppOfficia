@@ -52,6 +52,7 @@ public class AdminController {
     @GetMapping("/tour-edit")
     public String addOrUpdateTourView(Model model,
             @RequestParam(name = "tourId", defaultValue = "0") int tourId){
+        
         Tour test = this.tourService.getTourById(tourId);
         if (tourId > 0) // cập nhật
             model.addAttribute("tour", test);

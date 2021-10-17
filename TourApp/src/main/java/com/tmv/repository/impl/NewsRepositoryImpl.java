@@ -13,6 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -54,6 +55,50 @@ public class NewsRepositoryImpl implements NewsRepository{
 
         
         return q.getResultList(); 
+    }
+
+    @Override
+    public Long countAllNews() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Query q = session.createQuery("Select Count(*) From News");
+        
+        
+        return Long.parseLong(q.getSingleResult().toString());
+    }
+
+    @Override
+    public boolean addOrUpdateNews(News news) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try{
+            if (news.getId() == 0)
+                session.save(news);
+            else
+                session.update(news);
+            return true;
+        } catch (HibernateException ex){
+           System.err.println("== ADD OR UPDATE TOUR ERROR ==="+ ex.getMessage());
+           ex.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteNews(int newsId) {
+        try{
+            Session session = this.sessionFactory.getObject().getCurrentSession();
+            News t = session.get(News.class, newsId);
+            session.delete(t);
+            return true;
+        }catch(HibernateException ex){
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public News getNewsById(int newsId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        return session.get(News.class, newsId);
     }
     
 }
