@@ -157,3 +157,168 @@ function deleteNews(newsId) {
     }    
 }
 
+//Chart
+
+function generateColor(){
+    let r = parseInt(Math.random()*255)
+    let g = parseInt(Math.random()*255)
+    let b = parseInt(Math.random()*255)
+    return `rgb(${r}, ${g}, ${b})`
+}
+
+function tourNumberBookMonthChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê số lượng đặt tour',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}
+
+function tourNumberBookQuarterChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê số lượng đặt tour theo quý',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}
+
+function tourNumberBookYearChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê số lượng đặt tour theo năm',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}
+
+function myMonthAmountStatsChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê doanh thu theo tháng',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}
+
+function myQuarterAmountStatsChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê doanh thu theo quý',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}
+
+
+function myYearAmountStatsChart(id, tourLabels=[], tourInfo=[] ){
+      
+    let colors=[]
+    for(let i = 0; i < tourInfo.length; i++)
+        colors.push(generateColor())
+    
+    const data = {
+  labels: tourLabels,
+  datasets: [{
+    label: 'Thống kê doanh thu theo quý',
+    data: tourInfo,
+    backgroundColor: colors,
+    hoverOffset: 4,
+    borderColor: 'rgb(75, 192, 192)'
+    }]
+  };
+
+    const config = {
+        type: 'bar',
+        data: data,
+      };
+      
+    let ctx = document.getElementById(id).getContext("2d");
+    new Chart(ctx, config)  
+}

@@ -10,6 +10,10 @@
     <class>com.tmv.pojos.Staff</class>
     <class>com.tmv.pojos.Images</class>
     <class>com.tmv.pojos.News</class>
+    <class>com.tmv.pojos.Type_1</class>
+    <class>com.tmv.pojos.User_1</class>
+    <class>com.tmv.pojos.OrderDetail</class>
+    <class>com.tmv.pojos.Tour_1</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toujdbc?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

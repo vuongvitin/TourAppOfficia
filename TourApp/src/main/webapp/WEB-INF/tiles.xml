@@ -82,5 +82,33 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Quan trị tin tức"/>
         <put-attribute name="content" value="/WEB-INF/jsp/news-edit.jsp" />
     </definition>
+    
+    <definition name = "tours-month-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê số lượt đặt tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-month-stats.jsp" />
+    </definition>
+    
+    <definition name = "tours-quarter-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê số lượt đặt tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-quarter-stats.jsp" />
+    </definition>
+    
+    <definition name = "tours-year-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê số lượt đặt tour"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-year-stats.jsp" />
+    </definition>
+<!--    thong ke doanh thu theo thang-->
+    <definition name = "tours-amount-month-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê theo doanh thu"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-amount-month-stats.jsp" />
+    </definition>
+    <definition name = "tours-amount-quarter-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê theo doanh thu"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-amount-quarter-stats.jsp" />
+    </definition>
+    <definition name = "tours-amount-year-stats" extends="baseAdminLayout">
+        <put-attribute name="title" value="Thống kê theo doanh thu"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tours-amount-year-stats.jsp" />
+    </definition>
 
 </tiles-definitions>
