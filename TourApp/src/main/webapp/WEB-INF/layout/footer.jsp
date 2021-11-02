@@ -8,5 +8,5 @@
 <!DOCTYPE html>
 <html>
 <div class="alert alert-success">
-    <strong>Tran Minh Vuong</strong> &COPY 2021 29/8/2021 <a href="#" class="alert-link">FLY TO THE MOON</a>.
+    <h5 class="text-center text-justify"><strong>Tran Minh Vuong</strong> &COPY 2021 29/8/2021</a></h5>
 </div>

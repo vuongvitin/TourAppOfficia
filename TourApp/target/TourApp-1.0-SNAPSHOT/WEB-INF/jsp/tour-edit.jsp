@@ -114,14 +114,15 @@
                         <option value="${type.id}">${type.ten}</option>
                     </c:if>
                 </c:forEach>
-        </form:select>     
+        </form:select>    
+                        <br>
         <div class="form-group">
             <c:if test="${tour.id > 0}">
                 <input type="submit" class="btn btn-warning" 
                    value="Cập nhật" />
             </c:if>
             <c:if test="${tour.id <= 0}">
-                <input type="submit" class="btn btn-warning" 
+                <input type="submit" class="btn btn-success" 
                    value="Thêm tour" /> 
             </c:if>
         </div>

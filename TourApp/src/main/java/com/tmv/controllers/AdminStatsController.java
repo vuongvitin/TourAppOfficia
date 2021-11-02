@@ -107,7 +107,7 @@ public class AdminStatsController {
         }
         
         
-        model.addAttribute("yearStats", this.statsService.toursSumAmountMonthStats(kw, fromDate, toDate));
+        model.addAttribute("yearStats", this.statsService.toursNumYearStats(kw, fromDate, toDate));
         return "tours-year-stats";
     }
 }

@@ -30,7 +30,7 @@
     <c:if test="${pageContext.request.userPrincipal.name == null}">
         <li class="nav-item">
             <a href="<c:url value="/login"/>" class="nav-link text-warning">
-                <i class="fas fa-user">Dang nhap</i>
+                <i class="fas fa-user">Đăng nhập</i>
             </a>
         </li>
     </c:if>
@@ -47,13 +47,13 @@
         </li>
         <li class="nav-item">
             <a href="<c:url value="/logout"/>" class="nav-link text-danger">
-                <i class="">Dang xuat</i>
+                <i class="">Đăng xuất</i>
             </a>
         </li>
     </c:if> 
     <li class="nav-item">
         <a href="<c:url value="/register"/>" class="nav-link text-warning">
-             <i class="fas fa-check-circle">Dang Ky</i>
+             <i class="fas fa-check-circle">Đăng ký</i>
         </a>
     </li>
   </ul>

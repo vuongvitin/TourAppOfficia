@@ -78,12 +78,12 @@ public class Tour implements Serializable {
     private int id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 5, max = 150, message = "{product.name.lengErr}")
+    @Size(min = 5, max = 150, message = "{tour.name.lengErr}")
     @Column(name = "name")
     private String name;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45, message = "{tour.thoigian.Errleng}")
     @Column(name = "thoi_gian")
     private String thoiGian;
     @Basic(optional = false)
@@ -94,10 +94,10 @@ public class Tour implements Serializable {
     private Date ngayKhoiHanh;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45, message = "{tour.diemden.Errleng}")
     @Column(name = "diem_den")
     private String diemDen;
-    @Size(max = 50)
+    @Size(min = 1, max = 50, message = "{tour.phuongtien.Errleng}" )
     @Column(name = "phuong_tien")
     private String phuongTien;
     @Basic(optional = false)

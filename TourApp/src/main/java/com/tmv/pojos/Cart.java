@@ -10,6 +10,7 @@ package com.tmv.pojos;
  * @author PC
  */
 public class Cart {
+    private int tourId;
     private String tourName;
     private Long priceAdult;
     private int quantityAdult;
@@ -85,6 +86,20 @@ public class Cart {
      */
     public void setQuantityChildren(int quantityChildren) {
         this.quantityChildren = quantityChildren;
+    }
+
+    /**
+     * @return the tourId
+     */
+    public int getTourId() {
+        return tourId;
+    }
+
+    /**
+     * @param tourId the tourId to set
+     */
+    public void setTourId(int tourId) {
+        this.tourId = tourId;
     }
 
     

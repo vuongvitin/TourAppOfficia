@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <c:if test="${param.successMsg != null}">
     <div class="alert alert-danger">
-        ${param.successMsg}}ccccc
+        ${param.successMsg}}
     </div>
 </c:if>
     
@@ -18,32 +18,32 @@
 
 <c:url value="/login" var="action"  />
 
-<h1 class="text-center text-danger">DANG NHAP</h1>
+<h1 class="text-center text-danger">ĐĂNG NHẬP</h1>
 
 
 
 <c:if test="${param.error != null}">
     <div class="alert alert-danger"> 
-        <p>Da co loi xay ra! Vui long quay lai sau!</p>
+        <p>ĐÃ CÓ LỖI XẢY RA!!</p>
     </div>
 </c:if>
 
 <c:if test="${param.accessDenied != null}">
     <div class="alert alert-danger"> 
-        Bạn khong co quyen truy cap!
+        Bạn không có quyền truy cập!
     </div>
 </c:if>
 
 <form method="post" action="${action}">
     <div class="form-group"> 
-        <label for="username">Username</label>
+        <label for="username">Tài khoản:</label>
         <input type="text" id="username" name = "username" class="form-control"/> 
     </div>
     <div class="form-group"> 
-        <label for="password">Password</label>
+        <label for="password">Mật khẩu:</label>
         <input type="password" id="password" name = "password"" class="form-control"/> 
     </div>
     <div class="form-group">
-        <input type="submit" value="DANG NHAP" class="btn btn-danger"/>
+        <input type="submit" value="ĐĂNG NHẬP" class="btn btn-danger"/>
     </div>
 </form>

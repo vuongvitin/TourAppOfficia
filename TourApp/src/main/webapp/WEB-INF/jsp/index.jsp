@@ -17,7 +17,6 @@
   </div>
 </template>
 <h1 class="text-center text-danger">WEB DAT TOUR</h1>
-${countTours}
 <sec:authorize access="hasRole('ROLE_ADMIN')">
     <div>
         <a href="<c:url value="/admin/manage"/>"  class="btn btn-danger" >Trang quản trị</a>

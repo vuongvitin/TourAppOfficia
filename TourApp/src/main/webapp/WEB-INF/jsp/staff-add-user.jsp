@@ -19,11 +19,11 @@
 <form:form method="post"  
            enctype="multipart/form-data" modelAttribute="user">
     <div class="form-group"> 
-        <label for="firstname">First Name</label>
+        <label for="firstname">Tên:</label>
         <form:input type="text" id="username" path = "firstName" class="form-control" />
     </div>
     <div class="form-group"> 
-        <label for="lastname">Last Name</label>
+        <label for="lastname">Họ:</label>
         <form:input type="text" id="username" path = "lastName" class="form-control" />
     </div>
     <div class="form-group"> 
@@ -31,19 +31,19 @@
         <form:input type="email" id="email" path = "email" class="form-control" />
     </div>
     <div class="form-group"> 
-        <label for="username">Username</label>       
+        <label for="username">Tài khoản:</label>       
         <form:input type="text" id="username" path = "username" class="form-control" />
     </div>
     <div class="form-group"> 
-        <label for="password">Password</label>
+        <label for="password">Mật khẩu:</label>
         <form:input type="password" id="password" path = "password" class="form-control" />
     </div>
     <div class="form-group"> 
-        <label for="password">Confirm Password</label>
+        <label for="password">Xác nhận mật khẩu:</label>
         <form:input type="password" id="confirm-password" path = "confirmPassword" class="form-control" />
     </div>
     <div class="form-group"> 
-        <label for="avatar">Confirm Password</label>
+        <label for="avatar">Ảnh đại diện:</label>
         <form:input type="file" id="avatar" path = "file" class="form-control" />
     </div>
     <div class="form-group">

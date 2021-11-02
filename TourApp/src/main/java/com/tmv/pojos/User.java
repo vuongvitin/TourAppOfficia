@@ -21,6 +21,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -56,29 +57,29 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Size(max = 45)
+    @Size(min = 1, max = 45, message = "{user.firName.lengErr}")
     @Column(name = "first_name")
     private String firstName;
-    @Size(max = 45)
     @Column(name = "last_name")
+    @Size(min = 1, max = 45, message = "{user.lastName.lengErr}")
     private String lastName;
     @Basic(optional = false)
-    @NotNull
+    @NotNull(message = "{user.username.notNull}")
     @Size(min = 1, max = 45)
     @Column(name = "username")
     private String username;
     @Basic(optional = false)
-    @NotNull
+    @NotNull(message = "{user.password.notNull}")
     @Size(min = 1, max = 255)
     @Column(name = "password")
     @JsonIgnore
     private String password;
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 45)
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
-    @NotNull
+//    @NotNull(message = "{user.userRole.nullErr}" )
     @Size(min = 1, max = 10)
     @Column(name = "user_role")
     private String userRole;
@@ -86,12 +87,15 @@ public class User implements Serializable {
     @JsonIgnore
     private Collection<Comment> commentCollection;
     
+    
+//    @NotNull(message = "{user.file.nullErr}")
     private String avatar;
     @Transient
     @JsonIgnore
     private MultipartFile file;
     @Transient
     @JsonIgnore
+    @NotNull(message = "{user.confirmPassword.nullErr}")
     private String confirmPassword;
 
     public User() {

@@ -6,12 +6,11 @@
 
 
 /* global fetch */
-function addToCart(name, price){
-
-    
+function addToCart(tourId, name, price){
     fetch("/TourApp/api/cart", {
         method: 'post',
         body: JSON.stringify({
+            "tourId": tourId,
             "tourName": name,
             "priceAdult": price,
             "quantityAdult": 0,
@@ -139,6 +138,19 @@ function addComment(tourId){
     });
 }
 
+function pay(){
+    if(confirm("Ban có chắc chắn thanh toán không??") == true){
+        fetch(`/TourApp/api/pay`, {
+            method: "post"
+        }).then(function(res){
+            return res.json();
+        }).then(function(data){
+            console.info(data)
+            location.reload()
+        })
+    }
+}
+
 function deleteNews(newsId) {
     if (confirm("Bạn chắc chắn xóa không?") == true) { 
         fetch(`/TourApp/api/news/${newsId}`, {
@@ -175,7 +187,7 @@ function tourNumberBookMonthChart(id, tourLabels=[], tourInfo=[] ){
     const data = {
   labels: tourLabels,
   datasets: [{
-    label: 'Thống kê số lượng đặt tour',
+    label: 'Thống kê số lượng đặt tour theo tháng',
     data: tourInfo,
     backgroundColor: colors,
     hoverOffset: 4,
@@ -306,7 +318,7 @@ function myYearAmountStatsChart(id, tourLabels=[], tourInfo=[] ){
     const data = {
   labels: tourLabels,
   datasets: [{
-    label: 'Thống kê doanh thu theo quý',
+    label: 'Thống kê doanh thu theo năm',
     data: tourInfo,
     backgroundColor: colors,
     hoverOffset: 4,

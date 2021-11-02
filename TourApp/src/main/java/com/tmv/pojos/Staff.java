@@ -50,7 +50,7 @@ public class Staff implements Serializable {
     private String name;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 155)
+    @Size(min = 1, max = 555)
     @Column(name = "avatar")
     private String avatar;
     @Basic(optional = false)

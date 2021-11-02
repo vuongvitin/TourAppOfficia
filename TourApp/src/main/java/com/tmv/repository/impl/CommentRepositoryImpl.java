@@ -56,7 +56,7 @@ public class CommentRepositoryImpl implements CommentRepository{
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Comment> query = builder.createQuery(Comment.class);
         Root root = query.from(Comment.class);
-
+        
         
         query = query.where(builder.equal(root.get("tour"), tourId));
         query = query.orderBy(builder.desc(root.get("id")));

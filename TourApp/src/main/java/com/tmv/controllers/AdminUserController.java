@@ -35,7 +35,7 @@ public class AdminUserController {
     public String addUserStaff(Model model, @ModelAttribute(value = "user") User user){
         if(user.getPassword().isEmpty()
                 || !user.getPassword().equals(user.getConfirmPassword()))
-        model.addAttribute("errMsg", "Mat khau khong khop hoặc rỗng!!!");        
+        model.addAttribute("errMsg", "Mat mật khẩu không khớp hoặc rỗng!!!");        
         else{
             if(this.userDetailsService.addUserStaff(user) == true)
             {   

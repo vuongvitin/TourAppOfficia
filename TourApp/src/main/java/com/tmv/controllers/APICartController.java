@@ -6,10 +6,15 @@
 package com.tmv.controllers;
 
 import com.tmv.pojos.Cart;
+import com.tmv.pojos.User;
+import com.tmv.service.OrderService;
 import com.tmv.utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,18 +27,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class APICartController {
-    
+    @Autowired
+    private OrderService orderService;
     
     @PostMapping("/api/cart")
     public int addToCart(@RequestBody Cart params, HttpSession session){
         Cart cart =  (Cart) session.getAttribute("cart");
-
+        
         if(cart == null){
             session.setAttribute("cart", params);
             return 1;
-        }else{
+        }else{//san pham da co trong gio
+            session.removeAttribute("cart");
             String tenTour = params.getTourName();
-            if(cart.getTourName().equals(tenTour) != true){//san pham chua co trong gio
+            if(cart.getTourName().equals(tenTour) == true){
                 session.setAttribute("cart", params);
                 return 1;
             }
@@ -61,5 +68,18 @@ public class APICartController {
        
         
         return Utils.sumAmount(c);
+    }
+    
+    @PostMapping("/api/pay")
+    public HttpStatus pay(HttpSession session, Model model){
+        User u = (User) session.getAttribute("currentUser");
+                
+        if(this.orderService.addReceipt((Cart) session.getAttribute("cart"), u) == true){
+            session.removeAttribute("cart");
+//            model.addAttribute("msg", "Bạn đã thanh toán thành công!!");
+            return HttpStatus.OK;
+        }
+        
+        return HttpStatus.BAD_REQUEST;
     }
 } 

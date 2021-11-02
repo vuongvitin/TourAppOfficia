@@ -31,7 +31,7 @@
         <p class="mota">- ${tourId.mota}</p>
         <div>
             <a class="btn btn-primary btn-lg mg-t-10" href="<c:url value="/booking/${tourId.id}" />" 
-               onclick="addToCart('${tourId.name}', ${tourId.giaTour})">Dat ngay</a>
+               onclick="addToCart(${tourId.id},'${tourId.name}', ${tourId.giaTour})">ĐẶT NGAY</a>
         </div>
 <!--        <a href="#" class="btn btn-primary" onclick="addToCart(${tourId.id}, '${tourId.name}', ${tourId.giaTour})">Dat hang</a>-->
     </div>
@@ -62,7 +62,7 @@
     </div>   
 </form> 
 
-${countComment}
+
 <ul class="pagination">
     <c:forEach begin="1" end="${Math.ceil(countComment/3)}" var="page">
         <li class="page-item"><a class="page-link" href="<c:url value="/tours/${tourId.id}"/>?page=${page}">${page}</a></li>

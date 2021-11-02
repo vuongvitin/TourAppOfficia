@@ -6,6 +6,9 @@
 package com.tmv.configs;
 
 import com.tmv.formatter.TypeFormatter;
+import com.tmv.validator.UserNameValidator;
+import java.util.HashSet;
+import java.util.Set;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -33,7 +36,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {
     "com.tmv.controllers",
     "com.tmv.repository",
-    "com.tmv.service"
+    "com.tmv.service",
+    "com.tmv.validator"
 })
 public class WebApplicationContextConfig implements WebMvcConfigurer{
   
@@ -95,6 +99,17 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
     public Validator getValidator() {
         return validator();
     }
+//    
+//    @Bean
+//    public WebAppValidator userValidator(){
+//        Set<Validator> springValidators = new HashSet<>();
+//        springValidators.add(new UserNameValidator());
+//        
+//        WebAppValidator v = new WebAppValidator();
+//        v.setSpringValidator(springValidators);
+//        
+//        return v;
+//    }
     
  
     
@@ -104,5 +119,6 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         source.setBasename("messages");
         return source;
     }
+    
   
 }

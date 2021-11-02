@@ -13,6 +13,7 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\UserRep
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APICartController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\HomeController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\CommentService.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\validator\WebAppValidator.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\configs\WebApplicationContextConfig.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\Impl\NewsServiceImpl.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\CommentRepository.java
@@ -33,6 +34,7 @@ C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\AdminU
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\StatsService.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\StaffRepository.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\service\UserService.java
+C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\validator\UserNameValidator.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\AdminStatsAmountController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\controllers\APICommentController.java
 C:\laptrinhjava\TourAppOfficial\TourApp\src\main\java\com\tmv\repository\ImageRepository.java

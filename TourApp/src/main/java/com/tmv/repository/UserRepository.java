@@ -17,4 +17,5 @@ public interface UserRepository {
     boolean addUser(User user);
     List<User> getUser(String username);
     boolean addUserStaff(User user);
+    boolean getUserTest(String username);
 }

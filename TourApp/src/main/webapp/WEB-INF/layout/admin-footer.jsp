@@ -7,5 +7,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <footer class="alert alert-info">
-    <span>Trang quản trị du lịch - Tran Minh Vuong &coppy; 2021</span>
+    <h5 class="text-center text-justify"><span>Trang quản trị du lịch - Tran Minh Vuong &coppy; 2021</span></h5>
 </footer>

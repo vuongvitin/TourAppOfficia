@@ -103,5 +103,10 @@ public class UserServiceImpl implements UserService{
         }
         return false;
     }
+
+    @Override
+    public boolean getUserTest(String username) {
+        return this.userRepository.getUserTest(username);
+    }
      
 }

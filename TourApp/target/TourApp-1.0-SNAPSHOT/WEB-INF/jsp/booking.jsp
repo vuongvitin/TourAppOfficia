@@ -63,7 +63,7 @@
 </table>
       
         <div class="alert alert-warning">
-            <h4>Tong tien: 
+            <h4>Tổng tiền: 
                 <span id="amountCart">
                     <fmt:formatNumber type = "number" 
             maxFractionDigits = "3" value = "${tourId.giaTour}" />
@@ -72,7 +72,10 @@
         </div>
         
  <div>
-     <a class="btn btn-danger btn-lg mg-t-10" >THANH TOAN</a>
+     <c:if test="${msg != null}">
+         <a class="btn btn-danger btn-lg mg-t-10">Bạn đã thanh toán thành công!!</a>
+     </c:if>
+     <a class="btn btn-danger btn-lg mg-t-10" onclick="pay()" >THANH TOÁN</a>
 </div>
 <br>
 

@@ -68,24 +68,22 @@ public class AdminController {
     @PostMapping("/tour-edit")
     public String addOrUpdateTour(Model model, 
             @RequestParam(name = "tourId", defaultValue = "0") int tourId,
-            @ModelAttribute(value = "tour") @Valid Tour tour,
-            BindingResult err){
+            @ModelAttribute(value = "tour") Tour tour){
         
-//        if (err.hasErrors()) {
-//            return "tour-edit";
+//        if (!err.hasErrors()) {
+            if(tourId != 0){
+                tour.setId(tourId);
+            }
+        
+            if(this.tourService.addOrUpdateTour(tour) == true){
+    //          model.addAttribute("Msg", "Thêm thành công!!!");
+                return "redirect:/admin/manage";
+            }else{
+                model.addAttribute("Msg", "Đã có lỗi xảy ra vui lòng quay lại sau!!!");
+            }
+            
 //        }
-        
-        if(tourId != 0){
-            tour.setId(tourId);
-        }
-        
-        if(this.tourService.addOrUpdateTour(tour) == true){
-//          model.addAttribute("Msg", "Thêm thành công!!!");
-            return "redirect:/admin/manage";
-        }else{
-            model.addAttribute("Msg", "Đã có lỗi xảy ra vui lòng quay lại sau!!!");
-        }
-        
+                
         return "tour-edit";
     }
     

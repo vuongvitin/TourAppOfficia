@@ -78,4 +78,26 @@ public class UserRepositoryImpl implements UserRepository{
         }
         return false;
     }
+
+    @Override
+    public boolean getUserTest(String username) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<User> query = builder.createQuery(User.class);
+        Root root = query.from(User.class);
+        query = query.select(root);
+        
+        if(!username.isEmpty()){
+            Predicate p = builder.equal(root.get("username").as(String.class), username.trim());
+            query = query.where(p);
+        }
+        
+        
+        Query q = session.createQuery(query);
+        
+        if(q.getResultList() != null)
+            return true;//co
+        
+        return false;
+    }
 }

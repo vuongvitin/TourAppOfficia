@@ -12,15 +12,15 @@
 
 <form class="form" action="">
         <div class="form-group">
-            <label  class="text-danger font-weight-bold h3"">Từ khoa: </label>
+            <label  class="text-danger font-weight-bold h3"">Từ khóa: </label>
             <input type="text" name="kw" class="form-control"/>
         </div>
         <div class="form-group">
-            <label  class="text-danger font-weight-bold h3"">Từ thoi diem:</label>
+            <label  class="text-danger font-weight-bold h3"">Từ thời điểm:</label>
             <input type="date" name="fromDate" class="form-control"/>
         </div>
         <div class="form-group">
-            <label class="text-danger font-weight-bold h3">đến thoi diem:</label>
+            <label class="text-danger font-weight-bold h3">đến thời điểm:</label>
             <input type="date" name="toDate" class="form-control"/>
         </div>        
         <button class="btn btn-success" type="submit">Báo cáo</button>
